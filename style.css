@@ -1,0 +1,297 @@
+/* Font */
+@font-face {
+    font-family: myWebsiteFont;
+    src: url("../font/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: Myfont;
+    src: url("../Font/Oswald/Oswald-VariableFont_wght.ttf");
+}
+body {
+    font-family: 'myWebsiteFont';
+}
+/* Universal */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.title {
+    font-family: MyFont;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    position: relative;
+    padding:60px 20px;
+}
+.title::after{
+    content: '';
+    display: block;
+    width: 50px;
+    height: 5px;
+    background: chocolate;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Navbar */
+nav {
+    background-color: #eff;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px;
+}
+.nav-logo {
+    float: left;
+}
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    padding: 10px;
+}
+.nav-toggle span {
+    width: 20px;
+    height: 5px;
+    background-color: #000;
+    display: inline-block;
+    margin: 2px 0px;
+}
+.nav-menu {
+    clear: both;
+    display: none;
+}
+nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.active {
+    display: block;
+}
+.dropdown > a::after {
+    content: '\f054';
+    font-family: 'Font Awesome 5 Free';
+    padding-left: 5px;
+}
+.dropdown-menu {
+    display: none;
+    padding-left: 20px;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url("../Img/ERjzIVVX0AAXwJI.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-header{display: inline-block;}
+.banner-content {
+    color: #fff;
+    text-align: center;
+}
+.banner-content h1 {
+    font-size: 1.2rem;
+    letter-spacing: 0.4em;
+    animation: typing 4s steps(22), blinking 0.2s infinite;
+    border-right: 1px solid blue;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@keyframes typing {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+@keyframes blinking {
+    from {border-right: 3px solid transparent;}
+    to {border-right: 3px solid red;}
+}
+.banner-content p {
+    padding: 20px 10px;
+    line-height: 1.6rem;
+}
+.banner-content button {
+    padding: 10px;
+    text-transform: uppercase;
+    background: #eff;
+    border-radius: 10px;
+    transition: all 0.7s ease;
+}
+.banner-content button:hover {
+    background: #333;
+    color: #fff;
+}
+/* Product */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-container .box {
+    width: 100%;
+    margin: 1%;
+    position: relative;
+}
+.product-container .box:hover .box-img img {
+    transform: scale(1.5);
+}
+.product-container .box .box-img {
+    width: 100%;
+    overflow: hidden;
+}
+.product-container .box .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease-in;
+}
+.product-container .box p {
+    text-align: center;
+    padding: 10px;
+}
+.product-container .box .box-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgb(47, 49, 51));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+.product-container .box:hover .box-overlay {
+    opacity: 1;
+}
+.product-container .box .box-overlay a {
+    color: seashell;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+/* About Us */
+.about {
+    background: linear-gradient(rgba(236, 236, 233, 0), rgba(100, 216, 252, 0.4)), url("../Img/ERjzIVVX0AAXwJI.jpg");
+    background-attachment: fixed;
+}
+.about .about-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.about .sub-title {
+    position: relative;
+}
+.about .sub-title::after {
+    content: '';
+    display: inline-block;
+    width:50px;
+    height: 3px;
+    background-color:aliceblue;
+    position: absolute;
+    top: 65%;
+    margin-left: 5px;
+}
+.about-info .about-review blockquote::before{
+        content: '\f10d';
+        font-family: 'Font Awesome 5 Free';
+        font-size: 1.5rem;
+        position: relative;
+        margin: 5px;
+}
+.about-info .about-review blockquote::after{
+    content: '\f10e';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.5rem;
+    position: relative;
+    margin: 5px;}
+@media only screen and (min-width:768px){
+    .product-container .box {width: 23%;
+    margin:1%;
+}
+}
+/* Contact Us */
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: steelblue;
+    padding: 30px;
+}
+.contant-form form {
+    border: 2px solid rgb(2, 255, 221);
+    padding: 30px;
+    border-radius: 30px;
+}
+.contant-form form label{
+    display: block;
+}
+.contact-form form input, .contact-form form textarea {
+    width: 100%;
+    outline: 2px solid rgb(193, 0, 252);
+    border-radius: 30px;
+    padding: 10px;
+}
+.submit {
+    text-align: center;
+}
+@media only screen and (min-width: 576px) {
+    .nav-toggle {
+        display: none;
+    }
+    .nav-menu {
+        display: block;
+        float: right;
+        clear: none;
+    }
+    .nav-menu li {
+        display: inline-block;
+    }
+    .dropdown {
+        position: relative;
+    }
+    .dropdown-menu {
+        position: absolute;
+    }
+    .dropdown-menu li {
+        white-space: nowrap;
+        background-color: #eff;
+        border: 1px solid #fff;
+        display: block;
+    }
+    /* Banner */
+    .banner-content h1 {
+        font-size: 1.5rem;
+    }
+    .banner-content p {
+        padding: 20px 60px;
+    }
+ /* about us */
+ .about-container .about-content, .about-container .about-info {
+     width:50%;
+     padding:20px
+ }
+} 
+/* Footer */
+.footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(215, 253, 0);
+}
